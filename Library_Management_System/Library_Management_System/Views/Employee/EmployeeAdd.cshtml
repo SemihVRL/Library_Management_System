@@ -1,0 +1,37 @@
+﻿@model Library_Management_System.Models.Entity.TBLEMPLOYEE
+@{
+    ViewBag.Title = "EmployeeAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;"> Yeni Personel Ekleme Sayfası</h2>
+
+
+@using (Html.BeginForm("EmployeeAdd", "Employee", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+   
+
+
+    <div style="margin-top:5px;">
+        <label>İSİM</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", })
+        @Html.ValidationMessageFor(x=>x.Name,"", new { @style="color:red"})
+
+    </div>
+
+    <div style="margin-top:5px;">
+        <label>SOYİSİM</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", })
+        @Html.ValidationMessageFor(x => x.Surname, "", new { @style = "color:red" })
+
+    </div>
+   <br />
+
+    <button class="btn btn-primary"> EKLE</button>
+}

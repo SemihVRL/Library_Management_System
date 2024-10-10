@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\semih\\source\\repos\\Library_Management_System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{75AD3A5F-7F14-4C9C-A2A0-F49F0710D144}|Library_Management_System\\Library_Management_System.csproj|c:\\users\\semih\\source\\repos\\library_management_system\\library_management_system\\views\\error\\page404.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75AD3A5F-7F14-4C9C-A2A0-F49F0710D144}|Library_Management_System\\Library_Management_System.csproj|solutionrelative:library_management_system\\views\\error\\page404.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75AD3A5F-7F14-4C9C-A2A0-F49F0710D144}|Library_Management_System\\Library_Management_System.csproj|c:\\users\\semih\\source\\repos\\library_management_system\\library_management_system\\controllers\\adminlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75AD3A5F-7F14-4C9C-A2A0-F49F0710D144}|Library_Management_System\\Library_Management_System.csproj|solutionrelative:library_management_system\\controllers\\adminlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75AD3A5F-7F14-4C9C-A2A0-F49F0710D144}|Library_Management_System\\Library_Management_System.csproj|c:\\users\\semih\\source\\repos\\library_management_system\\library_management_system\\views\\adminlogin\\adminpanelindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75AD3A5F-7F14-4C9C-A2A0-F49F0710D144}|Library_Management_System\\Library_Management_System.csproj|solutionrelative:library_management_system\\views\\adminlogin\\adminpanelindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Page404.cshtml",
+              "DocumentMoniker": "C:\\Users\\semih\\source\\repos\\Library_Management_System\\Library_Management_System\\Views\\Error\\Page404.cshtml",
+              "RelativeDocumentMoniker": "Library_Management_System\\Views\\Error\\Page404.cshtml",
+              "ToolTip": "C:\\Users\\semih\\source\\repos\\Library_Management_System\\Library_Management_System\\Views\\Error\\Page404.cshtml",
+              "RelativeToolTip": "Library_Management_System\\Views\\Error\\Page404.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-10T11:06:03.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminLoginController.cs",
+              "DocumentMoniker": "C:\\Users\\semih\\source\\repos\\Library_Management_System\\Library_Management_System\\Controllers\\AdminLoginController.cs",
+              "RelativeDocumentMoniker": "Library_Management_System\\Controllers\\AdminLoginController.cs",
+              "ToolTip": "C:\\Users\\semih\\source\\repos\\Library_Management_System\\Library_Management_System\\Controllers\\AdminLoginController.cs",
+              "RelativeToolTip": "Library_Management_System\\Controllers\\AdminLoginController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T11:04:12.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminPanelIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\semih\\source\\repos\\Library_Management_System\\Library_Management_System\\Views\\AdminLogin\\AdminPanelIndex.cshtml",
+              "RelativeDocumentMoniker": "Library_Management_System\\Views\\AdminLogin\\AdminPanelIndex.cshtml",
+              "ToolTip": "C:\\Users\\semih\\source\\repos\\Library_Management_System\\Library_Management_System\\Views\\AdminLogin\\AdminPanelIndex.cshtml",
+              "RelativeToolTip": "Library_Management_System\\Views\\AdminLogin\\AdminPanelIndex.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-10T11:04:02.592Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

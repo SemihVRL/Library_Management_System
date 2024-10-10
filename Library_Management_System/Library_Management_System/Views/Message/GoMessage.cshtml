@@ -1,0 +1,33 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<TBLMESSAGE>
+@{
+    ViewBag.Title = "GoMessage";
+    Layout = "~/Views/Shared/_StudentPanelLayout.cshtml";
+}
+<br />
+<h2>Giden Mesajlar</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+
+        <th>Alıcı</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ALICI</td>
+            <td>@x.KONU</td>
+            <td>@x.ICERIK</td>
+            <td>@Convert.ToDateTime(x.TARIH).ToString("dd/MM/yyyy")</td>
+
+
+        </tr>
+    }
+
+</table>
+
+

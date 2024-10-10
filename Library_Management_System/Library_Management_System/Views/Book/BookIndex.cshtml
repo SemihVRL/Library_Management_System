@@ -1,0 +1,74 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<TBLBOOK>
+@{
+    ViewBag.Title = "BookIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Kitaplar Sayfası</h2>
+
+@using (Html.BeginForm("BookIndex", "Book", FormMethod.Get))
+            {
+                <div style="margin-bottom:20px; margin-top:20px;">
+                    <b>Aranıcak kitabı yazınız..&nbsp;</b>@Html.TextBox("p")
+                    <input type="submit" value=" ARA" class="btn btn-primary" />
+
+                </div>
+            }
+
+
+<table class="table table-bordered" style="text-align:center;">
+
+    <tr>
+        <th>ID</th>
+        <th>İSİM</th>
+        <th>YAZAR</th>
+        <th>KATEGORİ</th>
+        <th>BASIM YILI</th>
+        <th>YAYINEVİ</th>
+        <th>SAYFA SAYISI</th>
+        <th>DURUM</th>
+        <th>GÜNCELLE/SİL</th>
+
+
+
+    </tr>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.Name</td>
+                <td>@x.TBLAUTHOR.Name&nbsp @x.TBLAUTHOR.Surname</td>
+                <td>@x.TBLCATEGORY.CategoryAd</td>
+                <td>@x.EditionYear</td>
+                <td>@x.PublishingHouse</td>
+                <td>@x.Page</td>
+                <td>@x.Status</td>
+                <td>
+
+                    <a href="/Book/BookFind/@x.ID" class="btn btn-success">GÜNCELLE</a>
+                    <i>---</i>
+                    <a href="/Book/BookDelete/@x.ID" class="btn btn-danger">SİL</a>
+
+
+
+                </td>
+
+
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
+
+
+<a href="/Book/BookAdd"><button class="btn btn-primary"> YENİ KİTAP EKLE</button></a>
+
+<br />
+<br />
+
+

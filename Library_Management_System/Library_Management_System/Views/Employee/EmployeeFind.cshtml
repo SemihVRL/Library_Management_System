@@ -1,0 +1,35 @@
+﻿@model Library_Management_System.Models.Entity.TBLEMPLOYEE
+@{
+    ViewBag.Title = "EmployeeFind";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Personel Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("EmployeeFind", "Employee", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+
+
+
+    <div style="margin-top:5px;">
+        <label>İSİM</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", })
+
+    </div>
+
+    <div style="margin-top:5px;">
+        <label>SOYİSİM</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <button class="btn btn-primary"> Güncelle</button>
+}
+

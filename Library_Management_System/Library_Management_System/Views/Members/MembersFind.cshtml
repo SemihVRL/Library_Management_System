@@ -1,0 +1,76 @@
+﻿@model Library_Management_System.Models.Entity.TBLMEMBERS
+@{
+    ViewBag.Title = "MembersFind";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Üye Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("MembersFind", "Members", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+
+
+
+    <div style="margin-top:5px;">
+        <label>İSİM</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", })
+
+    </div>
+
+    <div style="margin-top:5px;">
+        <label>SOYİSİM</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <div style="margin-top:5px;">
+        <label>KULLANICI ADI</label>
+        @Html.TextBoxFor(x => x.Username, new { @class = "form-control", })
+
+    </div>
+
+    <div style="margin-top:5px;">
+        <label>MAİL</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <div style="margin-top:5px;">
+        <label>ŞİFRE</label>
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", })
+
+    </div>
+
+    <div style="margin-top:5px;">
+        <label>FOTOĞRAF</label>
+        @Html.TextBoxFor(x => x.Photo, new { @class = "form-control", })
+
+    </div>
+    <br />
+    <div style="margin-top:5px;">
+        <label>TELEFON</label>
+        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", })
+
+    </div>
+
+    <div style="margin-top:5px;">
+        <label>OKUL</label>
+        @Html.TextBoxFor(x => x.School, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <button class="btn btn-primary"> Güncele</button>
+}
+
+
+
+

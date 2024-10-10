@@ -1,0 +1,67 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<TBLAUTHOR>
+@{
+    ViewBag.Title = "AuthorIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Yazarlar Sayfası</h2>
+<br />
+
+
+@using (Html.BeginForm("AuthorIndex", "Author", FormMethod.Get))
+{
+    <div style="margin-bottom:20px; margin-top:20px;">
+        <b>Aranıcak yazarı yazınız..&nbsp;</b>@Html.TextBox("p")
+        <input type="submit" value=" ARA" class="btn btn-primary" />
+
+    </div>
+}
+
+
+<table class="table table-bordered style="text-align:center;">
+
+    <tr>
+        <th>ID</th>
+        <th>İSİM</th>
+        <th>SOYİSİM</th>
+        <th>DETAYLAR</th>
+        <th>GÜNCELLE/SİL</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.Name</td>
+                <td>@x.Surname</td>
+                <td>@x.Detail</td>
+
+
+                <td>
+
+                    <a href="/Author/AuthorFind/@x.ID" class="btn btn-success">GÜNCELLE</a>
+                    <i>---</i>
+                    <a href="/Author/AuthorDelete/@x.ID" class="btn btn-danger" onclick="return confirm('Bu öğeyi silmek istediğinize emin misiniz?');">SİL</a>
+
+
+
+                </td>
+
+
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
+
+
+<a href="/Author/AuthorAdd"><button class="btn btn-primary"> YENİ YAZAR EKLE</button></a>
+
+<br />
+<br />
+

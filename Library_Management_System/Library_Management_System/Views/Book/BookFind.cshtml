@@ -1,0 +1,66 @@
+﻿@model Library_Management_System.Models.Entity.TBLBOOK
+@{
+    ViewBag.Title = "BookFind";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Kitap Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("BookFind", "Book", FormMethod.Post))
+{
+    <div>
+        <label> KİTAP ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <br />
+    <div>
+        <label>KİTAP ADI</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <div>
+        <label>KATEGORİ</label>
+        @Html.DropDownListFor(x => x.TBLCATEGORY.ID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+    </div>
+    <br />
+
+    <div>
+        <label>YAZAR</label>
+        @Html.DropDownListFor(y => y.TBLAUTHOR.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+
+    </div>
+    <br />
+
+    <div>
+        <label>BASIM YILI</label>
+        @Html.TextBoxFor(x => x.EditionYear, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <div>
+        <label>YAYINEVİ</label>
+        @Html.TextBoxFor(x => x.PublishingHouse, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <div>
+        <label>SAYFA SAYISI</label>
+        @Html.TextBoxFor(x => x.Page, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+
+    <button class="btn btn-success">GÜNCELLE</button>
+
+    <input type="hidden" name="Status" value="True" />
+
+
+}
+
+

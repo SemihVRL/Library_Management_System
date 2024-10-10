@@ -1,0 +1,67 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<TBLACTION>
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_StudentPanelLayout.cshtml";
+}
+
+
+<br />
+<h2>Kitap Geçmişim</h2>
+<br />
+
+
+<table class="table table-bordered" style="text-align:center;">
+
+    <tr>
+
+        <th>KİTAP ADI</th>
+
+
+        <th>ALIŞ TARİHİ</th>
+        <th>VERMESİ GEREKEN TARİH</th>
+        <th>GETİRDİĞİ TARİHİ</th>
+        
+
+
+
+
+    </tr>
+
+    <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                  
+                    <td>@x.TBLBOOK.Name</td>
+                    
+                  
+                    <td>@Convert.ToDateTime(x.ShipDate).ToString("dd/MM/yyyy")</td>
+                    <td>@Convert.ToDateTime(x.ReturnDate).ToString("dd/MM/yyyy")</td>
+                    <td>@Convert.ToDateTime(x.GetirdigiTarih).ToString("dd/MM/yyyy")</td>
+                    
+
+
+                </tr>
+            }
+
+
+
+
+        </tbody>
+</table>
+
+
+
+
+
+
+<br />
+<br />
+
+
+
+
+
+
+

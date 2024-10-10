@@ -1,0 +1,40 @@
+﻿@model Library_Management_System.Models.Entity.TBLAUTHOR
+@{
+    ViewBag.Title = "AuthorFind";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Yazar Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("AuthorFind", "Author", FormMethod.Post))
+{
+    <div>
+        <label>ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <br />
+    <div>
+        <label>AD</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <div>
+        <label>SOYAD</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <div>
+        <label>DETAYLAR</label>
+        @Html.TextBoxFor(x => x.Detail, new { @class = "form-control", })
+
+    </div>
+    <br />
+
+    <button class="btn btn-success">GÜNCELLE</button>
+
+
+}

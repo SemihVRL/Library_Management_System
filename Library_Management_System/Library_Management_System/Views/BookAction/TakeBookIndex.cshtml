@@ -1,0 +1,78 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<TBLACTION>
+@{
+    ViewBag.Title = "TakeBookIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Emanet Kitap Geri Alma Sayfası</h2>
+
+@*@using (Html.BeginForm("Takebbok", "Book", FormMethod.Get))
+{
+    <div style="margin-bottom:20px; margin-top:20px;">
+        <b>Aranıcak kitabı yazınız..&nbsp;</b>@Html.TextBox("p")
+        <input type="submit" value=" ARA" class="btn btn-primary" />
+
+    </div>
+}*@
+
+
+<table class="table table-bordered" style="text-align:center;">
+
+    <tr>
+        <th>İŞLEM ID</th>
+        <th>KİTAP ADI</th>
+        <th>ÜYE</th>
+        <th>PERSONEL</th>
+        <th>ALIŞ TARİHİ</th>
+        <th>İADE TARİHİ</th>
+        <th>İŞLEM</th>
+
+
+
+    </tr>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.TBLBOOK.Name</td>
+                <td>@x.TBLMEMBERS.Name&nbsp;@x.TBLMEMBERS.Surname</td>
+                <td>@x.TBLEMPLOYEE.Name&nbsp;@x.TBLEMPLOYEE.Surname</td>
+                <td>@Convert.ToDateTime(x.ShipDate).ToString("dd/MM/yyyy")</td>
+                <td>@Convert.ToDateTime(x.ReturnDate).ToString("dd/MM/yyyy")</td>
+
+
+
+
+                <td>
+
+                    <a href="/BookAction/TakeBook/@x.ID" class="btn btn-primary">Kitabı İade Al</a>
+
+
+
+
+
+                </td>
+
+
+            </tr>
+        }
+
+        
+
+
+    </tbody>
+</table>
+
+
+
+
+
+
+<br />
+<br />
+
+
+

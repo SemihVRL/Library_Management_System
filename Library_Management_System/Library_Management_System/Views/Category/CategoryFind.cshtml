@@ -1,0 +1,25 @@
+﻿@model Library_Management_System.Models.Entity.TBLCATEGORY
+@{
+    ViewBag.Title = "CategoryFind";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Kategori Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("CategoryFind","Category",FormMethod.Post))
+{
+    <div>
+        <label>ID</label>
+        @Html.TextBoxFor(x => x.ID, new {@class="form-control",@readonly="readonly" })
+    </div>
+    <br />
+    <div>
+        <label>KATEGORİ</label>
+        @Html.TextBoxFor(x => x.CategoryAd, new { @class = "form-control",})
+
+    </div>
+    <br />
+
+    <button class="btn btn-success">GÜNCELLE</button>
+}

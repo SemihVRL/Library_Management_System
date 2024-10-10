@@ -1,0 +1,82 @@
+﻿@model Library_Management_System.Models.Entity.TBLMEMBERS
+@{
+    ViewBag.Title = "StudentPanelIndex";
+    Layout = "~/Views/Shared/_StudentPanelLayout.cshtml";
+}
+<br />
+<h2>Öğrenci Panelim</h2>
+<br />
+
+@using (Html.BeginForm("StudentPanelIndex", "StudentPanel", FormMethod.Post))
+{
+    <table class="table table-bordered">
+
+        <tr>
+            <td>
+                <label style="font-weight:bold">Mail Adresi:</label>
+                @HttpContext.Current.User.Identity.Name
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                @*<label style="font-weight:bold">Ad:</label>
+                @TempData["Name"].ToString()*@
+                <label>Ad</label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" ,@readonly="readonly"})
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                @*<label style="font-weight:bold">Soyad:</label>
+                @TempData["Surname"].ToString()*@
+                <label>Soyad</label>
+                @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", @readonly = "readonly" })
+
+            </td>
+
+        </tr>
+
+
+
+
+
+        <tr>
+            <td>
+                @*<label style="font-weight:bold">Şifre:</label>
+        <input type="text" class="form-control" value="@TempData["Password"].ToString()" name="Password" />*@
+
+                <label>Şifre</label>
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <!--<label style="font-weight:bold">Okul:</label>-->
+                @*@TempData["School"].ToString()*@
+
+                <label>Okul</label>
+                @Html.TextBoxFor(x => x.School, new { @class = "form-control", @readonly = "readonly" })
+
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <button class="btn btn-warning">Şifre Güncelle</button>
+
+            </td>
+
+        </tr>
+    </table>
+}

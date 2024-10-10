@@ -1,0 +1,146 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KÜTÜPHANE PERSONEL PANELİ</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="~/webpanel/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="/webpanel/css/simple-sidebar.css" rel="stylesheet">
+
+    @*title ikon*@
+
+    <link rel="icon" type="image/x-icon" href="~/webpanel/library.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading"
+                 style="height:100px;text-align:center;background-color:#915555; color:white;font-weight:bold;">
+
+                Kütüphane Yönetim Sistemi
+
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="/HomePage/HomePageIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-home"></i>&nbsp;&nbsp; Ana Sayfa
+                </a>
+
+                <a href="/Category/CategoryIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-folder"></i>&nbsp;&nbsp; Kategoriler
+                </a>
+
+                <a href="/Book/BookIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-book"></i>&nbsp;&nbsp; Kitaplar
+                </a>
+
+                <a href="/Author/AuthorIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-pencil"></i> &nbsp;&nbsp;Yazarlar
+                </a>
+
+                <a href="/Members/MembersIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-user"></i> &nbsp;&nbsp;Üyeler
+                </a>
+
+                <a href="/Employee/EmployeeIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-briefcase"></i>&nbsp; &nbsp;Personeller
+
+                </a>
+
+                <a href="/BookAction/GiveBookIndex" class="list-group-item list-group-item-action bg-light">
+
+                    <i class="fas fa-hand-holding"></i> &nbsp;&nbsp;Emanet Kitap Ver
+                </a>
+
+                <a href="/BookAction/TakeBookIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-book-open"></i> &nbsp;&nbsp;Emanet Kitap Geri Al
+                </a>
+
+                <a href="/Operation/OperationIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-tasks"></i>&nbsp;&nbsp;İşlemler
+
+                </a>
+
+              
+                <a href="/Statistics/StatisticsIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-chart-line"></i>&nbsp;&nbsp;İstatistikler
+
+                </a>
+
+
+
+                <a href="/Statistics/HavaIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-cloud"></i>&nbsp;&nbsp;Hava Raporu
+
+                </a>
+
+                <a href="/Statistics/HavaCards" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-plus"></i>&nbsp;&nbsp;Hava Kartları
+
+                </a>
+                <a href="/Statistics/Gallery" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-images"></i>&nbsp;&nbsp;Galeri
+
+                </a>
+                <a href="/Store/StoreIndex" target="_blank" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-store"></i>&nbsp;&nbsp;Vitrin
+
+                </a>
+                <a href="/Category/CategoryIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-cog"></i>&nbsp;&nbsp;Ayarlar
+
+                </a>
+
+                <a href="/Category/CategoryIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-phone"></i>&nbsp;&nbsp;Yardım
+
+                </a>
+
+                <a href="/Category/CategoryIndex" class="list-group-item list-group-item-action bg-light">
+                    <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Çıkış
+
+                </a>
+
+            </div>
+        </div>
+
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+
+                @RenderBody()
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

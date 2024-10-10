@@ -1,0 +1,75 @@
+﻿@model Library_Management_System.Models.Entity.TBLACTION
+@{
+    ViewBag.Title = "TakeBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">İade Etme Sayfası</h2>
+
+
+@using (Html.BeginForm("TakeBookUpdate", "BookAction", FormMethod.Post))
+{
+
+
+    <div>
+        <label>İŞLEM ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+    <br />
+    <div>
+        <label>KİTAP ADI</label>
+        @Html.TextBoxFor(x => x.TBLBOOK.Name, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+
+    <br />
+    <div>
+        <label>ÜYE ADI</label>
+        @*@Html.TextBoxFor(x => x.TBLMEMBERS.Name, new { @class = "form-control", @readonly = "readonly" })*@
+        @Html.TextBox("FullName", Model.TBLMEMBERS.Name + " " + Model.TBLMEMBERS.Surname, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+    <br />
+
+    <div>
+        <label>KİTABI VEREN PERSONEL ADI</label>
+        @*@Html.TextBoxFor(x => x.TBLEMPLOYEE.Name, new { @class = "form-control", @readonly = "readonly" })*@
+        @Html.TextBox("Employee", Model.TBLEMPLOYEE.Name + " " + Model.TBLEMPLOYEE.Surname, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <br />
+
+    <div>
+        <label>KİTAP EMANET VERİLİŞ TARİHİ</label>
+        @Html.TextBoxFor(x => x.ShipDate, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+    <br />
+    <div>
+        <label>KİTABIN GERİ VERİLMESİ GEREKEN TARİH</label>
+        @Html.TextBoxFor(x => x.ReturnDate, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+    <br />
+    <div>
+        <label>İADE EDİLEN TARİH</label>
+        <input type="text" class="form-control" readonly="readonly" name="GetirdigiTarih" value="@DateTime.Now.ToShortDateString()">
+
+
+    </div>
+    <br />
+    <label>Geç Gelen Gün Sayısı</label>
+    <input type="text" class="form-control" id="gec" value="@ViewBag.dgr" />
+
+    <br />
+    <button class="btn btn-primary"> KİTABI GERİ AL</button>
+
+
+
+
+
+
+
+}
+

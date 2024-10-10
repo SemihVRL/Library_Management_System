@@ -1,0 +1,40 @@
+﻿@model Library_Management_System.Models.Entity.TBLMESSAGE
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_StudentPanelLayout.cshtml";
+}
+<br />
+<h2>Yeni Mesaj </h2>
+<br />
+
+
+@using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
+{
+    <div>
+        <label>Alıcı Maili</label>
+        @Html.TextBoxFor(x => x.ALICI, new { @class = "form-control" })
+
+    </div>
+
+
+
+    <div style="margin-top:5px;">
+        <label>Konu</label>
+
+        @Html.TextBoxFor(x => x.KONU, new { @class = "form-control" })
+
+    </div>
+
+    <div style="margin-top:5px;">
+        <label>İçerik</label>
+
+        @Html.TextAreaFor(x => x.ICERIK, new { @class = "form-control" })
+
+    </div>
+
+
+    <br />
+
+    <button class="btn btn-primary"> Gönder</button>
+}
+

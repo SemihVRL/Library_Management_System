@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Db_Library_ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBLACTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Book" Type="Int32" />
+    <Property Name="Member" Type="Int32" />
+    <Property Name="Employee" Type="Int32" />
+    <Property Name="ShipDate" Type="DateTime" Precision="0" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="TBLBOOK" Relationship="Self.FK_TBLACTION_TBLBOOK" FromRole="TBLACTION" ToRole="TBLBOOK" />
+    <NavigationProperty Name="TBLEMPLOYEE" Relationship="Self.FK_TBLACTION_TBLEMPLOYEE" FromRole="TBLACTION" ToRole="TBLEMPLOYEE" />
+    <NavigationProperty Name="TBLMEMBERS" Relationship="Self.FK_TBLACTION_TBLMEMBERS" FromRole="TBLACTION" ToRole="TBLMEMBERS" />
+    <NavigationProperty Name="TBLPUNISHMENT" Relationship="Self.FK_TBLPUNISHMENT_TBLACTION" FromRole="TBLACTION" ToRole="TBLPUNISHMENT" />
+    <Property Name="GetirdigiTarih" Type="DateTime" Precision="0" />
+    <Property Name="Durum2" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TBLAUTHOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLBOOK" Relationship="Self.FK_TBLBOOK_TBLAUTHOR" FromRole="TBLAUTHOR" ToRole="TBLBOOK" />
+  </EntityType>
+  <EntityType Name="TBLBOOK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="Byte" />
+    <Property Name="Author" Type="Int32" />
+    <Property Name="EditionYear" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="PublishingHouse" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Page" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="TBLACTION" Relationship="Self.FK_TBLACTION_TBLBOOK" FromRole="TBLBOOK" ToRole="TBLACTION" />
+    <NavigationProperty Name="TBLAUTHOR" Relationship="Self.FK_TBLBOOK_TBLAUTHOR" FromRole="TBLBOOK" ToRole="TBLAUTHOR" />
+    <NavigationProperty Name="TBLCATEGORY" Relationship="Self.FK_TBLBOOK_TBLCATEGORY" FromRole="TBLBOOK" ToRole="TBLCATEGORY" />
+    <Property Name="BookImages" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BookDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLCASHBOX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TotalMoney" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLCATEGORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryAd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TBLBOOK" Relationship="Self.FK_TBLBOOK_TBLCATEGORY" FromRole="TBLCATEGORY" ToRole="TBLBOOK" />
+  </EntityType>
+  <EntityType Name="TBLEMPLOYEE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLACTION" Relationship="Self.FK_TBLACTION_TBLEMPLOYEE" FromRole="TBLEMPLOYEE" ToRole="TBLACTION" />
+  </EntityType>
+  <EntityType Name="TBLMEMBERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="School" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLACTION" Relationship="Self.FK_TBLACTION_TBLMEMBERS" FromRole="TBLMEMBERS" ToRole="TBLACTION" />
+    <NavigationProperty Name="TBLPUNISHMENT" Relationship="Self.FK_TBLPUNISHMENT_TBLMEMBERS" FromRole="TBLMEMBERS" ToRole="TBLPUNISHMENT" />
+  </EntityType>
+  <EntityType Name="TBLPUNISHMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Member" Type="Int32" />
+    <Property Name="Action" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="Money" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="TBLACTION" Relationship="Self.FK_TBLPUNISHMENT_TBLACTION" FromRole="TBLPUNISHMENT" ToRole="TBLACTION" />
+    <NavigationProperty Name="TBLMEMBERS" Relationship="Self.FK_TBLPUNISHMENT_TBLMEMBERS" FromRole="TBLPUNISHMENT" ToRole="TBLMEMBERS" />
+  </EntityType>
+  <Association Name="FK_TBLACTION_TBLBOOK">
+    <End Role="TBLBOOK" Type="Self.TBLBOOK" Multiplicity="0..1" />
+    <End Role="TBLACTION" Type="Self.TBLACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLBOOK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLACTION">
+        <PropertyRef Name="Book" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLACTION_TBLEMPLOYEE">
+    <End Role="TBLEMPLOYEE" Type="Self.TBLEMPLOYEE" Multiplicity="0..1" />
+    <End Role="TBLACTION" Type="Self.TBLACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLEMPLOYEE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLACTION">
+        <PropertyRef Name="Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLACTION_TBLMEMBERS">
+    <End Role="TBLMEMBERS" Type="Self.TBLMEMBERS" Multiplicity="0..1" />
+    <End Role="TBLACTION" Type="Self.TBLACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMEMBERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLACTION">
+        <PropertyRef Name="Member" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPUNISHMENT_TBLACTION">
+    <End Role="TBLACTION" Type="Self.TBLACTION" Multiplicity="0..1" />
+    <End Role="TBLPUNISHMENT" Type="Self.TBLPUNISHMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLACTION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLPUNISHMENT">
+        <PropertyRef Name="Action" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLBOOK_TBLAUTHOR">
+    <End Role="TBLAUTHOR" Type="Self.TBLAUTHOR" Multiplicity="0..1" />
+    <End Role="TBLBOOK" Type="Self.TBLBOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLAUTHOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLBOOK">
+        <PropertyRef Name="Author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLBOOK_TBLCATEGORY">
+    <End Role="TBLCATEGORY" Type="Self.TBLCATEGORY" Multiplicity="0..1" />
+    <End Role="TBLBOOK" Type="Self.TBLBOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCATEGORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLBOOK">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPUNISHMENT_TBLMEMBERS">
+    <End Role="TBLMEMBERS" Type="Self.TBLMEMBERS" Multiplicity="0..1" />
+    <End Role="TBLPUNISHMENT" Type="Self.TBLPUNISHMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMEMBERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLPUNISHMENT">
+        <PropertyRef Name="Member" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Db_Library_ManagementEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TBLACTION" EntityType="Self.TBLACTION" />
+    <EntitySet Name="TBLAUTHOR" EntityType="Self.TBLAUTHOR" />
+    <EntitySet Name="TBLBOOK" EntityType="Self.TBLBOOK" />
+    <EntitySet Name="TBLCASHBOX" EntityType="Self.TBLCASHBOX" />
+    <EntitySet Name="TBLCATEGORY" EntityType="Self.TBLCATEGORY" />
+    <EntitySet Name="TBLEMPLOYEE" EntityType="Self.TBLEMPLOYEE" />
+    <EntitySet Name="TBLMEMBERS" EntityType="Self.TBLMEMBERS" />
+    <EntitySet Name="TBLPUNISHMENT" EntityType="Self.TBLPUNISHMENT" />
+    <AssociationSet Name="FK_TBLACTION_TBLBOOK" Association="Self.FK_TBLACTION_TBLBOOK">
+      <End Role="TBLBOOK" EntitySet="TBLBOOK" />
+      <End Role="TBLACTION" EntitySet="TBLACTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLACTION_TBLEMPLOYEE" Association="Self.FK_TBLACTION_TBLEMPLOYEE">
+      <End Role="TBLEMPLOYEE" EntitySet="TBLEMPLOYEE" />
+      <End Role="TBLACTION" EntitySet="TBLACTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLACTION_TBLMEMBERS" Association="Self.FK_TBLACTION_TBLMEMBERS">
+      <End Role="TBLMEMBERS" EntitySet="TBLMEMBERS" />
+      <End Role="TBLACTION" EntitySet="TBLACTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPUNISHMENT_TBLACTION" Association="Self.FK_TBLPUNISHMENT_TBLACTION">
+      <End Role="TBLACTION" EntitySet="TBLACTION" />
+      <End Role="TBLPUNISHMENT" EntitySet="TBLPUNISHMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLBOOK_TBLAUTHOR" Association="Self.FK_TBLBOOK_TBLAUTHOR">
+      <End Role="TBLAUTHOR" EntitySet="TBLAUTHOR" />
+      <End Role="TBLBOOK" EntitySet="TBLBOOK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLBOOK_TBLCATEGORY" Association="Self.FK_TBLBOOK_TBLCATEGORY">
+      <End Role="TBLCATEGORY" EntitySet="TBLCATEGORY" />
+      <End Role="TBLBOOK" EntitySet="TBLBOOK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPUNISHMENT_TBLMEMBERS" Association="Self.FK_TBLPUNISHMENT_TBLMEMBERS">
+      <End Role="TBLMEMBERS" EntitySet="TBLMEMBERS" />
+      <End Role="TBLPUNISHMENT" EntitySet="TBLPUNISHMENT" />
+    </AssociationSet>
+    <EntitySet Name="TBLABOUT" EntityType="Db_Library_ManagementModel.TBLABOUT" />
+    <EntitySet Name="TBLCONTACT" EntityType="Db_Library_ManagementModel.TBLCONTACT" />
+    <EntitySet Name="TBLMESSAGE" EntityType="Db_Library_ManagementModel.TBLMESSAGE" />
+    <EntitySet Name="TBLADMİN" EntityType="Db_Library_ManagementModel.TBLADMİN" />
+  </EntityContainer>
+  <EntityType Name="TBLABOUT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLCONTACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameSurname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLMESSAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GONDEREN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ALICI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KONU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ICERIK" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TARIH" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TBLADMİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Users" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,39 @@
+﻿@model Library_Management_System.Models.Entity.TBLAUTHOR
+@{
+    ViewBag.Title = "AuthorAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;"> Yeni Yazar Ekleme Sayfası</h2>
+
+
+@using (Html.BeginForm("AuthorAdd", "Author", FormMethod.Post))
+{
+    <div>
+        <label>ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+    </div>
+
+    <div>
+        <label>Surname</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+
+    </div>
+
+    <div>
+        <label>Detaylar</label>
+        @Html.TextBoxFor(x => x.Detail, new { @class = "form-control" })
+
+    </div>
+    <br />
+
+    <button class="btn btn-primary">Ekle</button>
+}
+

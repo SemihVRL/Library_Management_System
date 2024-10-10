@@ -1,0 +1,56 @@
+﻿@model Library_Management_System.Models.Entity.TBLACTION
+
+
+@{
+    ViewBag.Title = "GiveBookIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Emanet Kitap Verme Sayfası</h2>
+
+
+@using (Html.BeginForm("GiveBookIndex", "BookAction", FormMethod.Post))
+{
+
+    <div>
+        <label style="color:cadetblue"> ÜYE ID</label>
+        @Html.TextBoxFor(x => x.Member, new { @class = "form-control" })
+
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue">KİTAP ID</label>
+        @Html.TextBoxFor(x => x.Book, new { @class = "form-control" })
+
+    </div>
+
+
+
+    <div>
+        <label style="color:cadetblue">PERSONEL ID</label>
+        @Html.TextBoxFor(x => x.Employee, new { @class = "form-control" })
+
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue">KİTAP ALIŞ TARİHİ</label>
+        <input type="text" name="ShipDate" class="form-control" value="@DateTime.Now.ToShortDateString()" />
+
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue">KİTAP İADE TARİHİ</label>
+        <input type="text" name="ReturnDate" class="form-control" value="@DateTime.Now.AddDays(10).ToShortDateString()" />
+
+    </div>
+    <br />
+    @*<input type="hidden" value="False" name="Durum2" />*@
+    <button class="btn btn-primary">Kitabı Emanet Ver</button>
+
+    
+}
+
+

@@ -1,0 +1,58 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<TBLCATEGORY>
+@{
+    ViewBag.Title = "CategoryIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Kategoriler Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("CategoryIndex", "Category", FormMethod.Get))
+{
+    <div style="margin-bottom:20px; margin-top:20px;">
+        <b>Aranıcak kategoriyi yazınız..&nbsp;</b>@Html.TextBox("p")
+        <input type="submit" value=" ARA" class="btn btn-primary" />
+
+    </div>
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>KATEGORİ</th>
+        <th>GÜNCELLE/SİL</th>
+    </tr>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.CategoryAd</td>
+
+                <td>
+
+                    <a href="/Category/CategoryFind/@x.ID " class="btn btn-success">GÜNCELLE</a>
+                    <i>---</i>
+                    <a href="/Category/CategoryDelete/@x.ID" class="btn btn-danger">SİL</a>
+
+
+
+                </td>
+
+
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
+
+
+<a href="/Category/CategoryAdd"><button class="btn btn-primary"> YENİ KATEGORİ EKLE</button></a>
+
+<br />
+<br />

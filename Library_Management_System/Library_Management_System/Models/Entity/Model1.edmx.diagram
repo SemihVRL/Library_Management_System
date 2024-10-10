@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd1cb851a7324a8d9b6c675a23f9b8e9" Name="Diagram1">
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLACTION" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLAUTHOR" Width="1.5" PointX="1.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLBOOK" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLCASHBOX" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLCATEGORY" Width="1.5" PointX="1.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLEMPLOYEE" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLMEMBERS" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLPUNISHMENT" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="Db_Library_ManagementModel.FK_TBLACTION_TBLBOOK" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_Library_ManagementModel.FK_TBLACTION_TBLEMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_Library_ManagementModel.FK_TBLACTION_TBLMEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_Library_ManagementModel.FK_TBLPUNISHMENT_TBLACTION" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_Library_ManagementModel.FK_TBLBOOK_TBLAUTHOR" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_Library_ManagementModel.FK_TBLBOOK_TBLCATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_Library_ManagementModel.FK_TBLPUNISHMENT_TBLMEMBERS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLABOUT" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLCONTACT" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLMESSAGE" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Db_Library_ManagementModel.TBLADMİN" Width="1.5" PointX="8.375" PointY="3.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,60 @@
+﻿@model Library_Management_System.Models.Entity.TBLBOOK
+@{
+    ViewBag.Title = "BookAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:#915555;font-weight:bold;text-align:center;margin-top:20px;">Yeni Kitap Ekleme Sayfası</h2>
+
+
+@using (Html.BeginForm("BookAdd", "Book", FormMethod.Post))
+{
+    <div>
+        <label style="color:cadetblue">ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue">Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+    </div>
+  
+    <div>
+        <label style="color:cadetblue" > Kategori</label>
+        @Html.DropDownListFor(x => x.TBLCATEGORY.ID, (List < SelectListItem >)ViewBag.dgr1 , new {@class="form-control"})
+
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue">Yazar</label>
+        @Html.DropDownListFor(y => y.TBLAUTHOR.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue" >Basım Yılı</label>
+        @Html.TextBoxFor(x => x.EditionYear, new { @class = "form-control" })
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue">Yayınevi</label>
+        @Html.TextBoxFor(x => x.PublishingHouse, new { @class = "form-control" })
+
+    </div>
+
+    <div>
+        <label style="color:cadetblue">Sayfa Numarası</label>
+        @Html.TextBoxFor(x => x.Page, new { @class = "form-control" })
+
+    </div>
+
+   <input type="hidden" name="Status" value="True"/>
+    <br />
+
+    <button class="btn btn-primary">Ekle</button>
+}
